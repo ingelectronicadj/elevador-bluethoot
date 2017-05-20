@@ -39,11 +39,13 @@ void loop()
 {
   if (Serial.available())
   {
-    int steps = Serial.parseInt();
-    Serial.println(steps);
-    motor.step(steps);
+    int pasos = Serial.parseInt();
+    Serial.print("Giro en pasos de: ");
+    Serial.println(pasos);
+    motor.step(pasos);
     delay(500);
-    motor.step(-200);
-
+    //Aprovechar la logica para invertir giros ;)
+    //motor.step(-200); giro en sentido anti-horario
+    //motor.step(200); giro en sentido horario
   }
 }
